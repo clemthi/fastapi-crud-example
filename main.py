@@ -10,9 +10,9 @@ from sqlalchemy.orm import Session, sessionmaker, declarative_base
 
 app = FastAPI()
 
-
 # region database & ORM
-db_uri = os.getenv('DB_URI', 'postgresql://postgres:postgres@localhost:5432/postgres')
+# db_uri = os.getenv('DB_URI', 'postgresql://postgres:postgres@localhost:5432/postgres')
+db_uri = os.getenv('DB_URI', 'sqlite:///sqlite3.db')
 db_engine = create_engine(db_uri, pool_pre_ping=True)
 Base = declarative_base()
 
